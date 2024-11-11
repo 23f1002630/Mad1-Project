@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Georgia, "Times New Roman", Times, serif;
+        background-color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      .header {
+        position: absolute;
+        top: 2px;
+        left: 34px;
+        font-size: 20px;
+        font-family: Georgia, "Times New Roman", Times, serif;
+        font-weight: bold;
+        color: white;
+      }
+
+      .login-box {
+        width: 300px;
+        padding: 40px;
+        background: #f4f1f1;
+        text-align: center;
+        box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+        border-radius: 10px;
+      }
+
+      .login-box h2 {
+        margin: 0 0 30px;
+        padding: 0;
+        color: black;
+        font-family: Georgia, "Times New Roman", Times, serif;
+      }
+
+      .textbox {
+        position: relative;
+        margin-bottom: 30px;
+        font-family: Georgia, "Times New Roman", Times, serif;
+      }
+
+      .textbox input {
+        width: 100%;
+        padding: 10px 0;
+        background: none;
+        border: none;
+        border-bottom: 2px solid #666;
+        outline: none;
+        color: #333;
+        font-size: 18px;
+      }
+
+      .textbox input::placeholder {
+        color: #999;
+      }
+
+      .btn {
+        width: 100%;
+        background: #2e2d2d;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        font-size: 18px;
+        color: #fff;
+        border-radius: 5px;
+        transition: background 0.3s;
+      }
+
+      .btn:hover {
+        background: #333;
+      }
+
+      .signup {
+        margin-top: 20px;
+        font-size: 14px;
+        color: #333;
+      }
+
+      .signup a {
+        color: blue;
+        text-decoration: none;
+      }
+
+      .signup a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header"><h2>Influencer Link</h2></div>
+    <div class="login-box">
+      <h2>Login</h2>
+      <form method="post" action="/login">
+        <div class="textbox">
+          <input type="text" placeholder="username" name="username" value="" />
+        </div>
+        <div class="textbox">
+          <input
+            type="password"
+            placeholder="Password"
+            name="password"
+            value=""
+          />
+        </div>
+        <input type="submit" class="btn" value="Login" />
+        <div class="signup">
+          Don't have an account?
+          <a href="/influencer_register">Sign up as Influencer</a>
+          <a href="/sponsor_registration">Sign up as Sponsor</a>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard</title>
+    <style>
+      body {
+        font-family: Georgia, "Times New Roman", Times, serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f0f0f0;
+      }
+
+      .navbar {
+        background-color: #4caf50;
+        padding: 30px;
+        color: white;
+        text-align: right;
+      }
+
+      .navbar h1 {
+        float: left;
+        margin: 0;
+        padding-left: none;
+      }
+
+      .navbar a {
+        color: white;
+        text-decoration: none;
+        padding: 8px 16px;
+        background-color: #4caf50;
+        border-radius: 4px;
+      }
+
+      .container {
+        padding: 20px;
+      }
+
+      .welcome {
+        background-color: white;
+        padding: 20px;
+        border-radius: 5px;
+        margin-bottom: 20px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .section {
+        background-color: white;
+        padding: 20px;
+        border-radius: 5px;
+        margin-bottom: 20px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      h2 {
+        margin-top: 0;
+        color: #4caf50;
+      }
+
+      .campaign,
+      .influencer,
+      .accepted {
+        margin-bottom: 20px;
+      }
+
+      .campaign .item,
+      .influencer .item,
+      .accepted .item {
+        margin-bottom: 15px;
+      }
+
+      .item p {
+        margin: 5px 0;
+      }
+
+      .buttons {
+        display: flex;
+        gap: 10px;
+      }
+
+      .delete {
+        background-color: #f44336;
+        color: white;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      .update {
+        background-color: #ff9800;
+        color: white;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="navbar">
+      <h1>Admin Dashboard</h1>
+      <a href={{url_for('home')}} class="logout">Logout</a>
+    </div>
+    <h2>Welcome, HISHAM</h2>
+    <h2>Campaign Details</h2>
+    {% for campaign in campaigns %}
+    <div class="container">
+      
+      
+      <div class="section campaign">
+        
+        
+        <div class="item">
+          <p><strong>Title:</strong>{{campaign.title}}</p>
+          <p><strong>Niche:</strong>{{campaign.niche}}</p>
+          <p>
+            <strong>Description:{{campaign.description}}</strong>
+          </p>
+          <p><strong>Date:{{campaign.date}}</strong></p>
+          <form action="{{url_for('delete_campaign1', name=campaign.title)}}" method="POST"
+                    style="display: inline;">
+                    <button class="delete" type="submit">Delete</button>
+                </form>
+                <a href="{{url_for('edit_campaign1', c_id=campaign.id)}}"
+                    class="update">Edit</a>
+            
+          </div>
+        </div>
+        
+        
+        </div>
+      </div>
+      {% endfor %}
+      <div class="section influencer">
+        <h2>Influencer Details</h2>
+        {% for influencer in influencers %}
+        <div class="item">
+          <p><strong>ID:{{influencer.id}}</strong></p>
+          <p><strong>Name:{{influencer.fullname}}</strong></p>
+          <p><strong>Niche:{{influencer.niche}}</strong></p>
+          
+          
+        </div>
+      </div>
+      {% endfor %}
+      <div class="section accepted">
+        <h2>Accepted Requests</h2>
+        {% for campaign in campaigns1 %}
+        <div class="item">
+          <p><strong>Title:</strong>{{campaign.title}}</p>
+          <p><strong>Niche:</strong>{{campaign.niche}}</p>
+          <p>
+            <strong>Description:{{campaign.description}}</strong>
+          </p>
+          <p><strong>Date:{{campaign.date}}</strong></p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </body>
+</html>

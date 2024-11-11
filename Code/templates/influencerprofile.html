@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Influencer's Profile</title>
+    <style>
+      body {
+        font-family: Georgia, "Times New Roman", Times, serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+      }
+      header {
+        background-color: #4caf50;
+        color: white;
+        padding: 10px 0;
+        text-align: center;
+        font-size: 24px;
+        font-weight: bold;
+      }
+      .navbar {
+        display: flex;
+        justify-content: flex-end;
+        padding: 10px 20px;
+        background-color: #4caf50;
+      }
+      .navbar a {
+        color: white;
+        padding: 10px 20px;
+        text-decoration: none;
+        font-size: 18px;
+      }
+      .navbar a:hover {
+        background-color: #45a049;
+      }
+      .container {
+        padding: 20px;
+        max-width: 800px;
+        margin: 0 auto;
+        background-color: white;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        margin-top: 20px;
+      }
+      .welcomemsg {
+        text-align: center;
+        font-size: 24px;
+        margin-bottom: 20px;
+        font-weight: bold;
+      }
+      .profilecard {
+        display: flex;
+        align-items: center;
+        padding: 20px;
+        background-color: #f9f9f9;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+      }
+      .profilecard img {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        margin-right: 20px;
+      }
+      .profileinfo {
+        display: flex;
+        flex-direction: column;
+      }
+      .profileinfo h2 {
+        margin: 0;
+        color: #4caf50;
+        font-size: 24px;
+      }
+      .profileinfo p {
+        margin: 5px 0;
+        color: #555;
+        font-size: 16px;
+      }
+      .detailscard {
+        padding: 15px;
+        background-color: #fafafa;
+        border-radius: 8px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      }
+      .detailscard p {
+        margin: 8px 0;
+        font-size: 16px;
+      }
+      .detailscard span {
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <header>Influencer's Profile</header>
+    <div class="navbar">
+      <a href="#">Profile</a>
+      <a href="#">Campaigns</a>
+      <a href={{url_for('home')}} class="logout">Logout</a>
+    </div>
+
+    <div class="container">
+      <div class="welcomemsg">Welcome</div>
+
+      <div class="profilecard">
+        <div class="profileinfo">
+          <h2>{{user.username}}</h2>
+          <p>influencer</p>
+        </div>
+      </div>
+
+      <div class="detailscard">
+        <p><span>Email:{{user.emailid}}</span></p>
+        <p><span>Name:{{user.fullname}}</span></p>
+        <p><span>niche:{{user.niche}}</span></p>
+        <p><span>role:</span> Influencer</p>
+      </div>
+    </div>
+  </body>
+</html>

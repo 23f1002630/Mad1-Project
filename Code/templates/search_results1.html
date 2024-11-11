@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Influencer's Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <style>
+        body {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .navbar {
+            display: flex;
+            justify-content: flex-end;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+        }
+        .navbar a {
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        .navbar a:hover {
+            background-color: #45a049;
+        }
+        .container {
+            padding: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        .sectiontitle {
+            font-size: 20px;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+        .campaigncard, .status-card {
+            padding: 15px;
+            background-color: #fafafa;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            margin-bottom: 15px;
+        }
+        .campaigncard {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .campaigndetails {
+            max-width: 70%;
+        }
+        .campaigndetails p {
+            margin: 5px 0;
+            font-size: 16px;
+        }
+        .campaignactions {
+            display: flex;
+            gap: 10px;
+        }
+        .campaignactions button {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            color: white;
+        }
+        .campaignactions .reject {
+            background-color: #f44336;
+        }
+        .campaignactions .request {
+            background-color: #ff9800;
+        }
+        .statuscard {
+            padding: 20px;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            border-left: 5px solid;
+        }
+        .accepted {
+            color: green;
+            border-color: green;
+        }
+        .rejected {
+            color: red;
+            border-color: red;
+        }
+    </style>
+</head>
+<body>
+    <header>Influencer's Dashboard</header>
+    <div class="navbar">
+        <a href={{url_for('profile',username=username)}}>Profile</a>
+        <a href="#">Campaigns</a>
+        <a href={{url_for('home')}} class="logout">Logout</a>
+        <form class="d-flex" role="search" action="{{url_for('search_results1')}}" method="GET">
+            <input  type="text" name="search_keywords" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+    </div>
+    
+
+        {% if campaigns %}
+     
+      <ul>
+        {% for campaign in campaigns %}
+        <h3>Search Results for {{campaign.title}}</h3>
+          <ul>
+            <p><strong>Description:{{campaign.description}}</strong></p>
+            <p><strong>Niche:{{campaign.niche}}</strong></p>
+          </ul>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p>No   Campaign found.</p>
+    {% endif %}
+
+        
+                      
+    
+                      
+                      
+                    
+                        
+                     
+                  
+           
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+    crossorigin="anonymous"></script>
+</body>
+</html>

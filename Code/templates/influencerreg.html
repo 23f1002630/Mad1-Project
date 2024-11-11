@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Influencer Registration</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Georgia, "Times New Roman", Times, serif;
+        background-color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      .header {
+        position: absolute;
+        top: 2px;
+        left: 34px;
+        font-size: 20px;
+        font-family: Georgia, "Times New Roman", Times, serif;
+        font-weight: bold;
+        color: white;
+      }
+
+      .registration-box {
+        width: 300px;
+        padding: 40px;
+        background: #fff;
+        text-align: center;
+        box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+        border-radius: 10px;
+        position: relative;
+      }
+
+      .registration-box h2 {
+        margin: 0 0 30px;
+        color: #333;
+      }
+
+      .textbox {
+        position: relative;
+        margin-bottom: 30px;
+      }
+
+      .textbox input {
+        width: 100%;
+        padding: 10px 0;
+        background: none;
+        border: none;
+        border-bottom: 2px solid #333;
+        outline: none;
+        color: #333;
+        font-size: 18px;
+      }
+
+      .btn {
+        width: 100%;
+        background: #ffc107;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        font-size: 18px;
+        color: #fff;
+        border-radius: 5px;
+        margin-top: 20px;
+      }
+
+      .platform-presence {
+        margin: 20px 0;
+      }
+
+      .platform-presence div {
+        margin-bottom: 10px;
+        font-weight: bold;
+      }
+
+      .platform-presence span {
+        display: inline-block;
+        margin: 5px;
+        padding: 10px 15px;
+        border-radius: 5px;
+        color: #fff;
+        cursor: pointer;
+      }
+
+      .youtube {
+        background-color: #ff0000;
+      }
+
+      .twitter {
+        background-color: #1da1f2;
+      }
+
+      .insta {
+        background-color: #e4405f;
+      }
+
+      .dropdown {
+        margin-bottom: 20px;
+      }
+
+      .dropdown select {
+        width: 100%;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #333;
+        outline: none;
+        font-size: 18px;
+        background: #fff;
+        color: #333;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <h2>Influencer Link</h2>
+    </div>
+    <div class="registration-box">
+      <h2>Influencer Registration</h2>
+      <form method="POST" action="/influencer_register">
+        <div class="textbox">
+          <input type="text" placeholder="Email Id" name="emailid" value="" />
+        </div>
+        <div class="textbox">
+          <input type="text" placeholder="Full Name" name="fullname" value="" />
+        </div>
+        <div class="textbox">
+          <input type="text" placeholder="Username" name="username" value="" />
+        </div>
+        <div class="textbox">
+          <input
+            type="password"
+            placeholder="Password"
+            name="password"
+            value=""
+          />
+        </div>
+        <div class="platform-presence">
+          <div>Platform Presence</div>
+          <span class="youtube">youtube</span>
+          <span class="twitter">twitter</span>
+          <span class="insta">insta</span>
+        </div>
+        <div class="dropdown">
+          <select name="niche">
+            <option value="" disabled selected>Select Niche</option>
+            <option value="fashion">Fashion</option>
+            <option value="technology">Technology</option>
+            <option value="food">Food</option>
+            <option value="travel">Travel</option>
+            <option value="fitness">Fitness</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Sign in</button>
+      </form>
+    </div>
+  </body>
+</html>

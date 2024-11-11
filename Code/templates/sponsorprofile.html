@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sponsor Dashboard</title>
+    <style>
+      body {
+        font-family: Georgia, "Times New Roman", Times, serif;
+        background-color: rgb(228, 228, 228);
+        margin: 0;
+        padding: 0;
+      }
+
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #4caf50;
+        padding: 10px;
+        color: white;
+      }
+
+      .logo {
+        font-size: 24px;
+        font-weight: bold;
+      }
+
+      .navlinks a,
+      .logout {
+        color: white;
+        text-decoration: none;
+        margin: 10px;
+      }
+
+      .navlinks input {
+        padding: 5px;
+        margin-right: 10px;
+      }
+
+      .navlinks button {
+        padding: 5px 10px;
+        background-color: white;
+        border: none;
+        color: #4caf50;
+        cursor: pointer;
+      }
+
+      .welcome {
+        margin-bottom: 20px;
+      }
+
+      .username {
+        color: #4caf50;
+        font-weight: bold;
+      }
+
+      .industry {
+        color: #333;
+        font-style: italic;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="navbar">
+      <div class="logo">Sponsor</div>
+      <div class="navlinks">
+        <a href="sponsorprofile.html">Profile</a>
+        <a href="/sponsor_dashboard">Campaigns</a>
+        <a href={{url_for('SPrequest')}}>Requests</a>
+        <input type="text" placeholder="Find" />
+        <button>Search</button>
+        <a href={{url_for('home')}} class="logout">Logout</a>
+      </div>
+    </div>
+
+    <div class="welcome">
+      <h2>Welcome, <span class="username">{{Username}}</span></h2>
+      <p class="industry">Industry: <span>{{Industry}}</span></p>
+    </div>
+  </body>
+</html>

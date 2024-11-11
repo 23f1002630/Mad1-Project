@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sponsor Dashboard</title>
+    <style>
+      body {
+        font-family: Georgia, "Times New Roman", Times, serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f0f0f0;
+      }
+
+      .navbar {
+        background-color: #4caf50;
+        padding: 10px;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .navbar h1 {
+        margin: 0;
+      }
+
+      .navbar a {
+        color: white;
+        text-decoration: none;
+        padding: 8px 16px;
+        background-color: #4caf50;
+        border-radius: 4px;
+        margin-left: 10px;
+      }
+
+      .navbar input[type="text"] {
+        padding: 6px;
+        border-radius: 4px;
+        border: none;
+      }
+
+      .navbar button {
+        padding: 8px 16px;
+        background-color: #4caf50;
+        border: none;
+        border-radius: 4px;
+        color: white;
+        cursor: pointer;
+        margin-left: 5px;
+      }
+
+      .container {
+        padding: 20px;
+      }
+
+      h2 {
+        color: #4caf50;
+        margin-bottom: 20px;
+      }
+
+      .results {
+        background-color: white;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .results p {
+        margin: 5px 0;
+      }
+
+      .results a {
+        color: #4caf50;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="navbar">
+      <h1>Sponsor Dashboard</h1>
+      <div>
+        <a href="#">Profile</a>
+        <a href="#">Campaigns</a>
+        <a href="#">Find</a>
+        <input type="text" placeholder="Search Influencers" />
+        <button>Search</button>
+        <a href="#">Logout</a>
+      </div>
+    </div>
+
+    <div class="container">
+      <h2>Search Results for "{{Influencer username}}"</h2>
+
+      <div class="results">
+        <p><strong>Name:</strong> {{influencer_name}}</p>
+        <p><strong>Category:</strong> Influencer</p>
+        <p><strong>Niche:</strong> {{influencer_niche}}</p>
+      </div>
+    </div>
+  </body>
+</html>
